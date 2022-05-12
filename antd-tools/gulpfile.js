@@ -140,18 +140,18 @@ function compile(modules) {
 }
 
 function tag() {
-  console.log('tagging');
-  const { version } = packageJson;
-  execSync(`git config user.email ${process.env.GITHUB_USER_EMAIL}`);
-  execSync(`git config user.name ${process.env.GITHUB_USER_NAME}`);
-  execSync(`git tag ${version}`);
-  execSync(
-    `git push https://${process.env.GITHUB_TOKEN}@github.com/vueComponent/ant-design-vue.git ${version}:${version}`,
-  );
-  execSync(
-    `git push https://${process.env.GITHUB_TOKEN}@github.com/vueComponent/ant-design-vue.git master:master`,
-  );
-  console.log('tagged');
+  // console.log('tagging');
+  // const { version } = packageJson;
+  // execSync(`git config user.email ${process.env.GITHUB_USER_EMAIL}`);
+  // execSync(`git config user.name ${process.env.GITHUB_USER_NAME}`);
+  // execSync(`git tag ${version}`);
+  // execSync(
+  //   `git push https://${process.env.GITHUB_TOKEN}@github.com/vueComponent/ant-design-vue.git ${version}:${version}`,
+  // );
+  // execSync(
+  //   `git push https://${process.env.GITHUB_TOKEN}@github.com/vueComponent/ant-design-vue.git master:master`,
+  // );
+  // console.log('tagged');
 }
 
 function githubRelease(done) {
