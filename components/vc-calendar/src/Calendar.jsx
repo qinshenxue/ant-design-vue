@@ -39,7 +39,7 @@ const Calendar = {
     defaultSelectedValue: PropTypes.object,
     mode: PropTypes.oneOf(['time', 'date', 'month', 'year', 'decade']),
     // locale: PropTypes.object,
-    showDateInput: PropTypes.bool.def(true),
+    showDateInput: PropTypes.bool.def(false),
     showWeekNumber: PropTypes.bool,
     showToday: PropTypes.bool.def(true),
     showOk: PropTypes.bool,

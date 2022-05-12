@@ -96,7 +96,7 @@ const RangeCalendar = {
     value: PropTypes.any,
     hoverValue: PropTypes.any,
     mode: PropTypes.arrayOf(PropTypes.oneOf(['time', 'date', 'month', 'year', 'decade'])),
-    showDateInput: PropTypes.bool.def(true),
+    showDateInput: PropTypes.bool.def(false),
     timePicker: PropTypes.any,
     showOk: PropTypes.bool,
     showToday: PropTypes.bool.def(true),
