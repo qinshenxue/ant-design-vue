@@ -75,7 +75,8 @@ const TimePicker = {
   mixins: [BaseMixin],
   props: initDefaultProps(TimePickerProps(), {
     align: {
-      offset: [0, -2],
+      offset: [0, 2],
+      targetOffset: [0, '-100%'],
     },
     disabled: false,
     disabledHours: undefined,

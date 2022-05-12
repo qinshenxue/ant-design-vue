@@ -28,7 +28,10 @@ export const PickerProps = () => ({
   autoFocus: PropTypes.bool,
   tagPrefixCls: PropTypes.string,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  align: PropTypes.object.def(() => ({})),
+  align: PropTypes.object.def(() => ({
+    offset: [0, 2],
+    targetOffset: [0, '-100%'],
+  })),
   inputReadOnly: PropTypes.bool,
   valueFormat: PropTypes.string,
 });

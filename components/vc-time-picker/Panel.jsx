@@ -132,6 +132,7 @@ const Panel = {
       showHour,
       showMinute,
       showSecond,
+      showHeader,
       format,
       defaultOpenValue,
       clearText,
@@ -174,27 +175,29 @@ const Panel = {
     );
     return (
       <div class={`${prefixCls}-inner`}>
-        <Header
-          clearText={clearText}
-          prefixCls={prefixCls}
-          defaultOpenValue={validDefaultOpenValue}
-          value={sValue}
-          currentSelectPanel={currentSelectPanel}
-          onEsc={esc}
-          format={format}
-          placeholder={placeholder}
-          hourOptions={hourOptions}
-          minuteOptions={minuteOptions}
-          secondOptions={secondOptions}
-          disabledHours={this.disabledHours2}
-          disabledMinutes={disabledMinutes}
-          disabledSeconds={disabledSeconds}
-          onChange={this.onChange}
-          focusOnOpen={focusOnOpen}
-          onKeydown={keydown}
-          inputReadOnly={inputReadOnly}
-          clearIcon={clearIcon}
-        />
+        {showHeader ? (
+          <Header
+            clearText={clearText}
+            prefixCls={prefixCls}
+            defaultOpenValue={validDefaultOpenValue}
+            value={sValue}
+            currentSelectPanel={currentSelectPanel}
+            onEsc={esc}
+            format={format}
+            placeholder={placeholder}
+            hourOptions={hourOptions}
+            minuteOptions={minuteOptions}
+            secondOptions={secondOptions}
+            disabledHours={this.disabledHours2}
+            disabledMinutes={disabledMinutes}
+            disabledSeconds={disabledSeconds}
+            onChange={this.onChange}
+            focusOnOpen={focusOnOpen}
+            onKeydown={keydown}
+            inputReadOnly={inputReadOnly}
+            clearIcon={clearIcon}
+          />
+        ) : null}
         <Combobox
           prefixCls={prefixCls}
           value={sValue}

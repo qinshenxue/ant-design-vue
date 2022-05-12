@@ -7,6 +7,7 @@ function runCmd(cmd, _args, fn) {
   const runner = require('child_process').spawn(cmd, args, {
     // keep color
     stdio: 'inherit',
+    shell: true,
     env: getRunCmdEnv(),
   });
 

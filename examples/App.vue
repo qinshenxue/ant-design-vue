@@ -35,12 +35,26 @@
         { key: 'tab2', tab: 'tab2' },
       ]"
     />
-    <br />
-    <a-date-picker :align="{ offset: [0, 2], targetOffset: [0, '-100%'] }"> </a-date-picker>
-    <br />
-    <br />
     <a-config-provider :locale="locale">
-      <a-range-picker :align="{ offset: [0, 2], targetOffset: [0, '-100%'] }"> </a-range-picker>
+      <div>
+        <h1>默认</h1>
+        <a-date-picker> </a-date-picker>
+        <h1>show time</h1>
+        <a-date-picker show-time> </a-date-picker>
+        <h1>
+          range picker show time
+        </h1>
+        <a-range-picker show-time> </a-range-picker>
+        <h1>time picker</h1>
+        <a-time-picker> </a-time-picker>
+        <h1>week picker</h1>
+        <a-week-picker> </a-week-picker>
+        <h1>month picker</h1>
+        <a-month-picker> </a-month-picker>
+        <h1>range picker</h1>
+
+        <a-range-picker> </a-range-picker>
+      </div>
     </a-config-provider>
   </div>
 </template>
