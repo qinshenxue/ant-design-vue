@@ -1,6 +1,6 @@
 {
   "name": "@qinsx/ant-design-vue",
-  "version": "1.7.10",
+  "version": "1.7.11",
   "title": "Ant Design Vue",
   "description": "An enterprise-class UI design language and Vue-based implementation",
   "keywords": [
@@ -185,6 +185,7 @@
     "dom-align": "^1.10.4",
     "dom-closest": "^0.2.0",
     "dom-scroll-into-view": "^2.0.0",
+    "dotenv": "^16.0.1",
     "enquire.js": "^2.1.6",
     "intersperse": "^1.0.0",
     "is-mobile": "^2.2.1",
