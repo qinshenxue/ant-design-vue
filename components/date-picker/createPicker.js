@@ -48,14 +48,14 @@ export default function createPicker(TheCalendar, props) {
       return {
         sValue: value,
         showDate: value,
-        _open: !!this.open,
+        sOpen: !!this.open,
       };
     },
     watch: {
       open(val) {
         const props = getOptionProps(this);
         const state = {};
-        state._open = val;
+        state.sOpen = val;
         if ('value' in props && !val && props.value !== this.showDate) {
           state.showDate = props.value;
         }
@@ -69,12 +69,12 @@ export default function createPicker(TheCalendar, props) {
         }
         this.setState(state);
       },
-      _open(val, oldVal) {
-        this.$nextTick(() => {
-          if (!hasProp(this, 'open') && oldVal && !val) {
-            this.focus();
-          }
-        });
+      sOpen(val, oldVal) {
+        // this.$nextTick(() => {
+        //   if (!hasProp(this, 'open') && oldVal && !val) {
+        //     this.focus();
+        //   }
+        // });
       },
     },
     methods: {
@@ -100,7 +100,7 @@ export default function createPicker(TheCalendar, props) {
       handleOpenChange(open) {
         const props = getOptionProps(this);
         if (!('open' in props)) {
-          this.setState({ _open: open });
+          this.setState({ sOpen: open });
         }
         this.$emit('openChange', open);
       },
@@ -133,7 +133,7 @@ export default function createPicker(TheCalendar, props) {
 
     render() {
       const { $scopedSlots } = this;
-      const { sValue: value, showDate, _open: open } = this.$data;
+      const { sValue: value, showDate, sOpen: open } = this.$data;
       let suffixIcon = getComponentFromProp(this, 'suffixIcon');
       suffixIcon = Array.isArray(suffixIcon) ? suffixIcon[0] : suffixIcon;
       const listeners = getListeners(this);
@@ -230,7 +230,7 @@ export default function createPicker(TheCalendar, props) {
             readOnly
             value={formatDate(inputValue, this.format)}
             placeholder={placeholder}
-            class={props.pickerInputClass}
+            class={[props.pickerInputClass, this.sOpen ? props.pickerInputClass + '-focus' : '']}
             tabIndex={props.tabIndex}
             name={this.name}
           />
@@ -250,7 +250,7 @@ export default function createPicker(TheCalendar, props) {
           ...omit(listeners, 'change'),
           ...pickerProps.on,
           open,
-          onOpenChange: this.handleOpenChange,
+          openChange: this.handleOpenChange,
         },
         style: props.popupStyle,
         scopedSlots: { default: input, ...$scopedSlots },

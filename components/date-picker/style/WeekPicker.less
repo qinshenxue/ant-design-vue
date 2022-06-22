@@ -2,20 +2,43 @@
   &-cell {
     opacity: 0.5;
   }
+
   .@{calendar-prefix-cls}-body tr {
     cursor: pointer;
     transition: all 0.3s;
+
+    .@{calendar-prefix-cls}-date {
+      &:hover {
+        background: transparent;
+      }
+    }
+
     &:hover {
-      background: @primary-1;
+      background: @item-hover-bg;
     }
+
     &.@{calendar-prefix-cls}-active-week {
-      font-weight: bold;
-      background: @primary-2;
+      background: @primary-color;
+
+      .@{calendar-prefix-cls}-date {
+        color: @white;
+      }
+
+      .@{calendar-prefix-cls}-week-number-cell {
+        color: fade(@white, 80%);
+      }
+
+      .@{calendar-prefix-cls}-today {
+        .@{calendar-prefix-cls}-date {
+          border-color: @text-color-inverse;
+        }
+      }
     }
-    .@{calendar-prefix-cls}-selected-day .@{calendar-prefix-cls}-date,
-    .@{calendar-prefix-cls}-selected-day:hover .@{calendar-prefix-cls}-date {
-      color: @text-color;
-      background: transparent;
-    }
+
+    // .@{calendar-prefix-cls}-selected-day .@{calendar-prefix-cls}-date,
+    // .@{calendar-prefix-cls}-selected-day:hover .@{calendar-prefix-cls}-date {
+    //   color: @text-color;
+    //   background: transparent;
+    // }
   }
 }

@@ -119,11 +119,11 @@ export default {
       this.setState(state);
     },
     sOpen(val, oldVal) {
-      this.$nextTick(() => {
-        if (!hasProp(this, 'open') && oldVal && !val) {
-          this.focus();
-        }
-      });
+      // this.$nextTick(() => {
+      //   if (!hasProp(this, 'open') && oldVal && !val) {
+      //     this.focus();
+      //   }
+      // });
     },
   },
   methods: {
@@ -388,7 +388,7 @@ export default {
     const input = ({ value: inputValue }) => {
       const [start, end] = inputValue;
       return (
-        <span class={props.pickerInputClass}>
+        <span class={[props.pickerInputClass, this.sOpen ? props.pickerInputClass + '-focus' : '']}>
           <input
             disabled={props.disabled}
             readOnly

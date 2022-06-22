@@ -176,7 +176,11 @@ const Picker = {
     },
 
     closeCalendar(callback) {
-      this.setOpen(false, callback);
+      // this.setOpen(false, callback);
+      // 确保面板显示了选中后，再关闭日历选择面板
+      this.$nextTick(function() {
+        this.setOpen(false, callback);
+      });
     },
 
     focus() {

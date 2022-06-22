@@ -49,7 +49,7 @@ export default {
     }
     return {
       _value: value,
-      _open: this.open,
+      sOpen: this.open,
     };
   },
   watch: {
@@ -59,16 +59,16 @@ export default {
       this.prevState = { ...this.$data, ...state };
     },
     open(val) {
-      const state = { _open: val };
+      const state = { sOpen: val };
       this.setState(state);
       this.prevState = { ...this.$data, ...state };
     },
-    _open(val, oldVal) {
-      this.$nextTick(() => {
-        if (!hasProp(this, 'open') && oldVal && !val) {
-          this.focus();
-        }
-      });
+    sOpen(val, oldVal) {
+      // this.$nextTick(() => {
+      //   if (!hasProp(this, 'open') && oldVal && !val) {
+      //     this.focus();
+      //   }
+      // });
     },
   },
   mounted() {
@@ -76,7 +76,7 @@ export default {
   },
   updated() {
     this.$nextTick(() => {
-      if (!hasProp(this, 'open') && this.prevState._open && !this._open) {
+      if (!hasProp(this, 'open') && this.prevState.sOpen && !this.sOpen) {
         this.focus();
       }
     });
@@ -108,7 +108,7 @@ export default {
     },
     handleOpenChange(open) {
       if (!hasProp(this, 'open')) {
-        this.setState({ _open: open });
+        this.setState({ sOpen: open });
       }
       this.$emit('openChange', open);
     },
@@ -157,7 +157,7 @@ export default {
     const prefixCls = getPrefixCls('calendar', customizePrefixCls);
     this._prefixCls = prefixCls;
 
-    const { _value: pickerValue, _open: open } = $data;
+    const { _value: pickerValue, sOpen: open } = $data;
     const { focus = noop, blur = noop } = listeners;
 
     if (pickerValue && localeCode) {
@@ -201,7 +201,7 @@ export default {
             readOnly
             value={(value && value.format(format)) || ''}
             placeholder={placeholder}
-            class={pickerInputClass}
+            class={[pickerInputClass, this.sOpen ? pickerInputClass + '-focus' : '']}
             onFocus={focus}
             onBlur={blur}
           />

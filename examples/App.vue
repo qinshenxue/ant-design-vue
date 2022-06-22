@@ -1,42 +1,9 @@
 <template>
   <div style="padding:20px 100px">
-    <a-card
-      title="测试"
-      :tab-props="{ size: 'small' }"
-      :tab-list="[
-        { key: 'tab1', tab: 'tab1' },
-        { key: 'tab2', tab: 'tab2' },
-      ]"
-    />
-    <br />
-    <a-card
-      title="测试"
-      :tab-props="{ size: 'large' }"
-      :tab-list="[
-        { key: 'tab1', tab: 'tab1' },
-        { key: 'tab2', tab: 'tab2' },
-      ]"
-    />
-    <br />
-    <a-card
-      title="测试"
-      :tab-props="{}"
-      :tab-list="[
-        { key: 'tab1', tab: 'tab1' },
-        { key: 'tab2', tab: 'tab2' },
-      ]"
-    />
-    <br />
-    <a-card
-      title="测试"
-      :tab-props="{ size: 'default' }"
-      :tab-list="[
-        { key: 'tab1', tab: 'tab1' },
-        { key: 'tab2', tab: 'tab2' },
-      ]"
-    />
     <a-config-provider :locale="locale">
       <div>
+        <h1>输入框</h1>
+        <a-input></a-input>
         <h1>默认</h1>
         <a-date-picker> </a-date-picker>
         <h1>show time</h1>
