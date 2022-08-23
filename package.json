@@ -1,6 +1,6 @@
 {
   "name": "@qsx/ant-design-vue",
-  "version": "1.7.11",
+  "version": "1.7.20",
   "title": "Ant Design Vue",
   "description": "An enterprise-class UI design language and Vue-based implementation",
   "keywords": [
@@ -32,8 +32,6 @@
     "compile": "node antd-tools/cli/run.js compile",
     "pub": "node antd-tools/cli/run.js pub",
     "pub-with-ci": "node antd-tools/cli/run.js pub-with-ci",
-    "prepublish": "node antd-tools/cli/run.js guard",
-    "pre-publish": "node ./scripts/prepub",
     "prettier": "prettier -c --write '**/*'",
     "pretty-quick": "pretty-quick",
     "dist": "node antd-tools/cli/run.js dist",

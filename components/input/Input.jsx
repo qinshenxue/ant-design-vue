@@ -21,6 +21,9 @@ export function resolveOnChange(target, e, onChange) {
     if (e.type === 'click') {
       // click clear icon
       event = Object.create(e, {
+        type: {
+          writable: true,
+        },
         target: {
           writable: true,
         },
@@ -28,6 +31,7 @@ export function resolveOnChange(target, e, onChange) {
           writable: true,
         },
       });
+      event.type = 'click';
       event.target = target;
       event.currentTarget = target;
       const originalInputValue = target.value;

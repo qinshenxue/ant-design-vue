@@ -1119,6 +1119,7 @@ const Select = {
       this.$emit('select', this.getVLBySingleValue(value), this.getOptionBySingleValue(value));
     },
     fireChange(value) {
+      const oldValue = this.$data._value;
       if (!hasProp(this, 'value')) {
         this.setState(
           {
@@ -1130,7 +1131,7 @@ const Select = {
       const vls = this.getVLForOnChange(value);
       const options = this.getOptionsBySingleValue(value);
       this._valueOptions = options;
-      this.$emit('change', vls, isMultipleOrTags(this.$props) ? options : options[0]);
+      this.$emit('change', vls, isMultipleOrTags(this.$props) ? options : options[0], oldValue);
     },
 
     isChildDisabled(key) {

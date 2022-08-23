@@ -113,6 +113,7 @@ export default function wrapPicker(Picker, props, pickerType) {
           'change',
           this.valueFormat ? momentToString(date, this.valueFormat) : date,
           dateString,
+          this.value,
         );
       },
       handleOk(val) {
