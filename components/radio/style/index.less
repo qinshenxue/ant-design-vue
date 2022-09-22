@@ -5,7 +5,8 @@
 @radio-group-prefix-cls: ~'@{radio-prefix-cls}-group';
 @radio-inner-prefix-cls: ~'@{radio-prefix-cls}-inner';
 @radio-duration: 0.3s;
-@radio-focus-shadow: 0 0 0 3px fade(@radio-dot-color, 8%);
+//@radio-focus-shadow: 0 0 0 3px fade(@radio-dot-color, 8%);
+@radio-focus-shadow: 0 0 0 3px @primary-fade-8;
 @radio-button-focus-shadow: @radio-focus-shadow;
 
 .@{radio-group-prefix-cls} {
@@ -307,7 +308,7 @@ span.@{radio-prefix-cls} + * {
 
   &-disabled&-checked {
     color: @text-color-inverse;
-    background-color: tint(@black, 90%);
+    background-color: @black-tint-90;
     border-color: @border-color-base;
     box-shadow: none;
   }

@@ -25,6 +25,13 @@
   box-shadow: @input-outline-offset @outline-blur-size @outline-width fade(@color, 20%);
 }
 
+.activePrimary() {
+  border-color: @primary-5; //~`colorPalette('@{color}', 5) `;
+  border-right-width: @border-width-base !important;
+  outline: 0;
+  box-shadow: @input-outline-offset @outline-blur-size @outline-width @primary-fade-20;
+}
+
 // == when hoverd
 .hover(@color: @input-hover-border-color) {
   border-color: @color;
@@ -65,7 +72,7 @@
 
   &-focus,
   &:focus {
-    .active();
+    .activePrimary();
   }
 
   &-disabled {

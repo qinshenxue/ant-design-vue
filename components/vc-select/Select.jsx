@@ -1448,11 +1448,13 @@ const Select = {
         if (maxTagPlaceholderEl) {
           selectedValueNodes.push(maxTagPlaceholderEl);
         }
-        selectedValueNodes.push(
-          <li class={`${prefixCls}-search ${prefixCls}-search--inline`} key="__input">
-            {this._getInputElement()}
-          </li>,
-        );
+        if (showSearch) {
+          selectedValueNodes.push(
+            <li class={`${prefixCls}-search ${prefixCls}-search--inline`} key="__input">
+              {this._getInputElement()}
+            </li>,
+          );
+        }
 
         if (isMultipleOrTags(props) && choiceTransitionName) {
           const transitionProps = getTransitionProps(choiceTransitionName, {
@@ -1572,7 +1574,7 @@ const Select = {
       this.$emit('focus');
     },
     selectionRefBlur(e) {
-      if (isMultipleOrTagsOrCombobox(this.$props)) {
+      if (isMultipleOrTagsOrCombobox(this.$props) && this.$props.showSearch) {
         e.preventDefault();
         return;
       }
