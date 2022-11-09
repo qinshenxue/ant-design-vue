@@ -2,6 +2,9 @@
   <div class="box">
     <a-config-provider :locale="locale">
       <div>
+        <a-button type="primary">按钮</a-button>
+        <a-button>默认</a-button>
+        <a href="ddd">链接</a>
         <h1>输入框</h1>
         <a-input></a-input>
         <h1>默认</h1>
