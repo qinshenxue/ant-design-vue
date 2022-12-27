@@ -4,6 +4,26 @@
     <div>
       <h1>输入框</h1>
       <a-input></a-input>
+      <a-select style="width:300px" v-model="select1">
+        <a-select-option :value="i + ''" v-for="i in 100" :key="i">
+          选项选项1选项1选项1选项1选项{{ i }}</a-select-option
+        >
+      </a-select>
+
+      <a-select default-value="lucy" style="width: 120px">
+        <a-select-option value="jack">
+          Jack
+        </a-select-option>
+        <a-select-option value="lucy">
+          Lucy
+        </a-select-option>
+        <a-select-option value="disabled" disabled>
+          Disabled
+        </a-select-option>
+        <a-select-option value="Yiminghe">
+          yiminghe
+        </a-select-option>
+      </a-select>
       <h1>默认</h1>
       <a-date-picker> </a-date-picker>
       <h1>show time</h1>
@@ -23,8 +43,8 @@
       <a-range-picker> </a-range-picker>
       <h1>select</h1>
       <a-select style="width:300px" v-model="select1">
-        <a-select-option :value="i + ''" v-for="i in 100" :key="i"
-          >选项选项1选项1选项1选项1选项{{ i }}</a-select-option
+        <a-select-option :value="i + ''" v-for="i in 100" :key="i">
+          选项选项1选项1选项1选项1选项{{ i }}</a-select-option
         >
       </a-select>
 
