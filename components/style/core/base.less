@@ -29,9 +29,16 @@ input::-ms-reveal {
 //    we force a non-overlapping, non-auto-hiding scrollbar to counteract.
 // 6. Change the default tap highlight to be completely transparent in iOS.
 
-*,
-*::before,
-*::after {
+// *,
+// *::before,
+// *::after {
+//   box-sizing: border-box; // 1
+// }
+[class*='ant-'],
+[class*='ant-']::after,
+[class*='ant-'] ::after,
+[class*='ant-']::before,
+[class*='ant-'] ::before {
   box-sizing: border-box; // 1
 }
 
@@ -158,19 +165,19 @@ textarea {
   -webkit-appearance: none;
 }
 
-ol,
-ul,
-dl {
-  margin-top: 0;
-  margin-bottom: 1em;
-}
+// ol,
+// ul,
+// dl {
+//   margin-top: 0;
+//   margin-bottom: 1em;
+// }
 
-ol ol,
-ul ul,
-ol ul,
-ul ol {
-  margin-bottom: 0;
-}
+// ol ol,
+// ul ul,
+// ol ul,
+// ul ol {
+//   margin-bottom: 0;
+// }
 
 dt {
   font-weight: 500;
@@ -214,6 +221,7 @@ sup {
 sub {
   bottom: -0.25em;
 }
+
 sup {
   top: -0.5em;
 }
@@ -368,7 +376,8 @@ select {
 //    controls in Android 4.
 // 2. Correct the inability to style clickable types in iOS and Safari.
 button,
-@{html-selector} [type="button"], /* 1 */
+@{html-selector} [type="button"],
+/* 1 */
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button; // 2

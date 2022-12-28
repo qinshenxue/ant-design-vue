@@ -1,7 +1,7 @@
 (function() {
   var css = [];
 
-  var primary = '#507afe';
+  var primary = '#00C493';
 
   css.push(':root{');
   css.push('--antd-primary-color:' + primary + ';');
