@@ -10,9 +10,15 @@
         >
       </a-select>
 
-      <a-select default-value="lucy" style="width: 120px">
+      <a-select
+        default-value="lucy"
+        style="width: 120px"
+        :dropdown-style="{ maxWidth: '400px' }"
+        :dropdown-match-select-width="false"
+        :dropdownAlign="{ points: ['tr', 'br'] }"
+      >
         <a-select-option value="jack">
-          Jack
+          JackJackJackJackJackJackJackJackJackJackJackJackJackJackJack
         </a-select-option>
         <a-select-option value="lucy">
           Lucy
